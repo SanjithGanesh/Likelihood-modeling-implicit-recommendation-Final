@@ -1,5 +1,7 @@
 # Likelihood Modeling for Implicit Recommendation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23382391.svg)](https://doi.org/10.5281/zenodo.23382391)
+
 Reproducibility code and compact publication artifacts for:
 
 **Likelihood Modeling for Implicit Recommendation: A Unified Full-Catalog Evaluation of Bernoulli, Poisson, and Gaussian Objectives**
