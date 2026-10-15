@@ -1,0 +1,21 @@
+# Core numerical stack
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.9.1
+
+# Machine learning
+torch==2.7.0
+
+# Configuration
+PyYAML==6.0.3
+
+# Visualization
+matplotlib==3.11.2
+
+# Utilities
+tqdm==4.67.1
+psutil==7.1.0
+
+# Testing
+pytest==9.1.1

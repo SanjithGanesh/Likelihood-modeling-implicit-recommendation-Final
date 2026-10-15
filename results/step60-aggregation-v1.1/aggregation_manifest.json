@@ -1,0 +1,125 @@
+{
+  "artifacts": {
+    "model_rank_summary.csv": {
+      "columns": 6,
+      "rows": 13,
+      "sha256": "ebe66fe0f57ced85d27b767aab40407690339adbfb3df7c89b3bcf41e98c3984"
+    },
+    "preference_seed_metrics.csv": {
+      "columns": 24,
+      "rows": 39,
+      "sha256": "2928edc909273f3ececb21d3a88fff3ee6ad316f17d0ea7a0555fe95a12cc163"
+    },
+    "preference_summary.csv": {
+      "columns": 75,
+      "rows": 13,
+      "sha256": "59b06cbf33d4142959d92eb539617947e0bcef40d6d08577919617491601625c"
+    },
+    "preference_user_model_summary.csv": {
+      "columns": 41,
+      "rows": 76063,
+      "sha256": "afde2322eff64a338786463abded689cf37569cca3443ac7b3f6de87d6f75595"
+    },
+    "primary_native_summary.csv": {
+      "columns": 8,
+      "rows": 15,
+      "sha256": "7ec5f0268c5a62784e593b89c9bbdb043bcc27fc5b64d0a30e2fa7815cc5103b"
+    },
+    "primary_seed_metrics.csv": {
+      "columns": 24,
+      "rows": 39,
+      "sha256": "721af69d154316ccf499f8559c0b8d95e68f4a67393915632ab62e71f40ef680"
+    },
+    "primary_summary.csv": {
+      "columns": 75,
+      "rows": 13,
+      "sha256": "9ea74b006e4f668c7cd1284a15529cb477fae0586ce5774bdb41eb4dc619ef93"
+    },
+    "primary_vs_preference_ndcg10.csv": {
+      "columns": 9,
+      "rows": 13,
+      "sha256": "99ed75f7f6b65317e99b117a917ff833bb97d8d5ff8eb1fa55216b67b3777011"
+    },
+    "stability_diagnostics_flat.csv": {
+      "columns": 55,
+      "rows": 18,
+      "sha256": "c8e6eab0975c97583aa16ef9072365fc183018eec06f1b520d2145ea66674ca6"
+    },
+    "stability_seed_metrics.csv": {
+      "columns": 27,
+      "rows": 18,
+      "sha256": "593fa8be6ea77c2365d9f42a91d61bfae10e4bc75ed2918c3b61c27d0a068b6d"
+    },
+    "stability_summary.csv": {
+      "columns": 15,
+      "rows": 6,
+      "sha256": "495613ca52895b2be4c6eee9ff724a9b7dd9a849fd05a29022cefdeea9445399"
+    }
+  },
+  "authorized_changes": {
+    "aggregation_manifest.json": "version/provenance metadata for B94 correction",
+    "primary_vs_preference_ndcg10.csv": {
+      "legacy_column_semantics": "absolute_difference contained signed preference-minus-primary",
+      "new_absolute_difference": "abs(signed_difference)",
+      "new_signed_difference": "preference_ndcg_at_10_mean - primary_ndcg_at_10_mean"
+    }
+  },
+  "change_control_id": "B94",
+  "correction_contract_sha256": "e4e81feadd95c2441ba044b32ecb61389f6d347c7f0118f5b86f4a8de5cdccff",
+  "freeze_id": "paper2-step60-aggregation-v1.1",
+  "inferential_statistics_changes": false,
+  "inventory": {
+    "preference_experiments": 39,
+    "preference_users_per_sidecar": 5851,
+    "primary_experiments": 39,
+    "stability_experiments": 18
+  },
+  "model_result_changes": false,
+  "parent_aggregation": "paper2-step60-aggregation-v1",
+  "parent_manifest_sha256": "d7e074d534b99e6deb511b851cbc02b911711cd5f5677c0ad4f5dac671c42c1c",
+  "parent_statistics_contract_sha256": "651ac8f6b78073796858cb369cb99b9b16f7f20ef53125374e3405d39316e1a7",
+  "ranking_changes": false,
+  "revision_script_sha256": "4f65fcc1dd29fead50a24699abe03713b0bc22977f36693e4fbc751271841f94",
+  "schema_version": "1.1",
+  "scientific_changes": false,
+  "source_input_digests": {
+    "preference_inputs_sha256": "5bb9b86816999a39276d74d2a1158a1eb7f3b95e623464b4f81c2ec4d50ab527",
+    "primary_inputs_sha256": "4efe3a321c72a4a64a49d93dc5190f0a6f14dc6d08fea12ae62d45967a784a89",
+    "stability_inputs_sha256": "43a4a0f78342d523a4825d403824b099d28c12ecdeac21239db0a2e09df9a348"
+  },
+  "source_protocol_hashes": {
+    "final_evaluation_sha256": "1874aeba214b3a049b439fa4d6b8aabbb8c20e6aa98fdfbeb94c0bb6348002f8",
+    "final_hyperparameters_sha256": "9aae84dd59d7c34c82a67563139bdb27256874ba79c645c749cbcf788d72c981",
+    "preference_protocol_sha256": "0ca60905d5cd71e9a589481e81919d772db1903517f03603d9490ffbfd7708bc",
+    "stability_protocol_sha256": "1e27f0b23684b83cccb2dd625110c597579e0d6f42489d191f06b45264360664",
+    "step59_decision_sha256": "eae84c543f0e99440844d047ee0fa4b5217a89264e50c9f264ecbc3fdb2fa2d2"
+  },
+  "source_runs": {
+    "preference": "preference-ml1m-v1-0ca60905",
+    "primary": "final-ml1m-v1-1874aeba",
+    "stability": "stability-ml1m-v1-1e27f0b2"
+  },
+  "statistical_definitions": {
+    "absolute_difference": "absolute_value_of_preference_mean_minus_primary_mean",
+    "confidence_intervals": false,
+    "inferential_tests": false,
+    "p_values": false,
+    "primary_reporting_metric": "ndcg_at_10",
+    "rank_shift": "preference_rank_minus_primary_rank",
+    "seed_summary": "unchanged from paper2-step60-aggregation-v1",
+    "signed_difference": "preference_mean_minus_primary_mean"
+  },
+  "status": "corrected_frozen_derived_artifact",
+  "unchanged_csv_files": [
+    "primary_seed_metrics.csv",
+    "primary_summary.csv",
+    "primary_native_summary.csv",
+    "preference_seed_metrics.csv",
+    "preference_summary.csv",
+    "preference_user_model_summary.csv",
+    "model_rank_summary.csv",
+    "stability_seed_metrics.csv",
+    "stability_summary.csv",
+    "stability_diagnostics_flat.csv"
+  ]
+}

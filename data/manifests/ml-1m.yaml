@@ -1,0 +1,70 @@
+dataset:
+  id: ml-1m
+  name: MovieLens 1M
+  provider: GroupLens Research
+  role: publication
+  publication_primary: true
+
+source:
+  archive_url: https://files.grouplens.org/datasets/movielens/ml-1m.zip
+  checksum_url: https://files.grouplens.org/datasets/movielens/ml-1m.zip.md5
+  archive_filename: ml-1m.zip
+  extracted_directory: ml-1m
+
+integrity:
+  archive_size_bytes: 5917549
+  official_md5: c4d9eecfca2ab87c1945afe126590906
+  sha256: a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20
+  checksum_verified: true
+
+format:
+  ratings_file: ratings.dat
+  movies_file: movies.dat
+  users_file: users.dat
+  readme_file: README
+  delimiter: "::"
+  encoding: latin-1
+
+ratings_schema:
+  columns:
+    - userId
+    - movieId
+    - rating
+    - timestamp
+
+raw_statistics:
+  ratings: 1000209
+  users: 6040
+  movies_metadata: 3883
+  rated_movies: 3706
+  rating_min: 1
+  rating_max: 5
+  missing_values_in_ratings: 0
+  missing_values_in_movies: 0
+  missing_values_in_users: 0
+
+usage:
+  intended_use:
+    - publication_experiments
+    - model_comparison
+    - final_evaluation
+    - robustness_analysis
+  use_for_primary_publication_results: true
+
+preprocessing:
+  status: not_started
+  processed_dataset_hash: null
+  filtering_rules: null
+  indexing_rules: null
+
+split:
+  status: not_created
+  split_manifest: null
+  split_hash: null
+
+notes:
+  - Raw files must remain unchanged.
+  - This dataset is the primary benchmark for the publication experiments.
+  - Hyperparameter tuning must use validation data only.
+  - Final test evaluation must occur only after model configurations are frozen.
+  - All processed datasets and canonical splits must be reproducibly derived from this raw dataset.

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "run_id": "tuning-ml1m-v1-91a6c1f0",
+  "dataset_id": "ml-1m",
+  "artifact_version": "v1",
+  "config_hash": "99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f",
+  "dataset_hash": "97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec",
+  "split_hash": "4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8",
+  "code_version": "456a1e3fb552d7ef0cbb440d8df68723f51b455cd7193d5fb48840812ef591c9",
+  "created_at_utc": "2026-10-07T04:51:59.218172Z"
+}

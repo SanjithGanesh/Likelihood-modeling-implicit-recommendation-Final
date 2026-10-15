@@ -1,0 +1,199 @@
+{
+  "models": {
+    "BernoulliMF": {
+      "experiment_id": "bernoullimf-primary-s2026-validation-fdce2b515885",
+      "hyperparameters": {
+        "batch_size": 1024,
+        "bias_l2": 1e-06,
+        "device": "cpu",
+        "epochs": 50,
+        "factor_l2": 1e-06,
+        "learning_rate": 0.003,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "negative_ratio": 10,
+        "negative_replace": true,
+        "negative_strategy": "uniform",
+        "negative_weight": 1.0,
+        "seed": 2026
+      },
+      "metric_value": 0.23064821413752218
+    },
+    "GaussianMF": {
+      "experiment_id": "gaussianmf-primary-s2026-validation-22ef83e3e460",
+      "hyperparameters": {
+        "batch_size": 1024,
+        "bias_l2": 1e-05,
+        "device": "cpu",
+        "epochs": 50,
+        "factor_l2": 1e-05,
+        "learning_rate": 0.003,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "seed": 2026
+      },
+      "metric_value": 0.06725626537056077
+    },
+    "HPF": {
+      "experiment_id": "hpf-primary-s2026-validation-22f191da0fdc",
+      "hyperparameters": {
+        "a": 0.3,
+        "a0": 0.3,
+        "b0": 1.0,
+        "c": 0.3,
+        "c0": 0.3,
+        "d0": 1.0,
+        "initialization_scale": 0.1,
+        "max_iterations": 100,
+        "n_factors": 128,
+        "seed": 2026,
+        "tolerance": 0.0001
+      },
+      "metric_value": 0.21493165051908095
+    },
+    "LogisticPCA": {
+      "experiment_id": "logisticpca-primary-s2026-validation-61f4b29de357",
+      "hyperparameters": {
+        "device": "cpu",
+        "epochs": 50,
+        "intercept_epsilon": 1e-06,
+        "learning_rate": 0.003,
+        "max_grad_norm": 5.0,
+        "n_factors": 128,
+        "seed": 2026,
+        "user_batch_size": 32
+      },
+      "metric_value": 0.4127152124197593
+    },
+    "PCA/SVD": {
+      "experiment_id": "pca-svd-primary-s2026-validation-cb92a1e3820b",
+      "hyperparameters": {
+        "n_components": 16,
+        "n_iter": 7,
+        "seed": 2026
+      },
+      "metric_value": 0.1359084417450085
+    },
+    "PoissonMF": {
+      "experiment_id": "poissonmf-primary-s2026-validation-e1c382949550",
+      "hyperparameters": {
+        "batch_size": 1024,
+        "bias_l2": 1e-07,
+        "device": "cpu",
+        "epochs": 50,
+        "factor_l2": 1e-07,
+        "learning_rate": 0.003,
+        "log_rate_max": 12.0,
+        "log_rate_min": -20.0,
+        "max_grad_norm": 5.0,
+        "n_factors": 32,
+        "seed": 2026,
+        "zero_ratio": 5,
+        "zero_replace": true,
+        "zero_strategy": "uniform"
+      },
+      "metric_value": 0.22797537064775114
+    },
+    "ap-emb": {
+      "experiment_id": "ap-emb-primary-s2026-validation-1185a9cc333e",
+      "hyperparameters": {
+        "batch_size": 2048,
+        "bias_l2": 0.0,
+        "context_l2": 0.0,
+        "context_normalization": "mean",
+        "device": "cpu",
+        "epochs": 50,
+        "initial_interaction_rate": 0.01,
+        "learning_rate": 0.01,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "seed": 2026,
+        "target_l2": 0.0,
+        "zero_ratio": 5,
+        "zero_replace": true,
+        "zero_sampling_strategy": "uniform"
+      },
+      "metric_value": 0.11073248842698352
+    },
+    "b-emb": {
+      "experiment_id": "b-emb-primary-s2026-validation-1ece806d846f",
+      "hyperparameters": {
+        "batch_size": 2048,
+        "bias_l2": 1e-07,
+        "context_l2": 1e-07,
+        "context_normalization": "mean",
+        "device": "cpu",
+        "epochs": 50,
+        "learning_rate": 0.05,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "negative_ratio": 5,
+        "negative_replace": true,
+        "negative_strategy": "uniform",
+        "negative_weight": 1.0,
+        "seed": 2026,
+        "target_l2": 1e-07
+      },
+      "metric_value": 0.22345855981462714
+    },
+    "g-emb": {
+      "experiment_id": "g-emb-primary-s2026-validation-91492cb58e5c",
+      "hyperparameters": {
+        "batch_size": 2048,
+        "bias_l2": 1e-05,
+        "context_l2": 1e-05,
+        "context_normalization": "mean",
+        "device": "cpu",
+        "epochs": 50,
+        "learning_rate": 0.05,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "seed": 2026,
+        "target_l2": 1e-05
+      },
+      "metric_value": 0.060156730441275987
+    },
+    "ng-emb": {
+      "experiment_id": "ng-emb-primary-s2026-validation-16259584085f",
+      "hyperparameters": {
+        "batch_size": 2048,
+        "bias_l2": 0.0,
+        "context_l2": 0.0,
+        "context_normalization": "mean",
+        "device": "cpu",
+        "epochs": 50,
+        "learning_rate": 0.003,
+        "max_grad_norm": 5.0,
+        "n_factors": 32,
+        "seed": 2026,
+        "target_l2": 0.0
+      },
+      "metric_value": 0.07152909704468058
+    },
+    "p-emb": {
+      "experiment_id": "p-emb-primary-s2026-validation-76b788cd35fd",
+      "hyperparameters": {
+        "batch_size": 2048,
+        "bias_l2": 1e-07,
+        "context_l2": 1e-07,
+        "context_normalization": "mean",
+        "device": "cpu",
+        "epochs": 50,
+        "learning_rate": 0.05,
+        "log_rate_clip": 20.0,
+        "max_grad_norm": 5.0,
+        "n_factors": 64,
+        "seed": 2026,
+        "target_l2": 1e-07,
+        "zero_ratio": 5,
+        "zero_replace": true,
+        "zero_sampling_strategy": "uniform"
+      },
+      "metric_value": 0.23020799791835428
+    }
+  },
+  "primary_metric": "ndcg_at_10",
+  "schema_version": "1.0",
+  "selection_seed": 2026,
+  "selection_split": "validation"
+}

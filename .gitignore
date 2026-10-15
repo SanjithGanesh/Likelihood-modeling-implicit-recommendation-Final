@@ -1,0 +1,57 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets / local environment
+.env
+.env.*
+*.env
+
+# Temporary / logs / checkpoints
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+*.log
+logs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# MovieLens data are obtained directly from GroupLens and are not committed.
+data/raw/*
+data/processed/*
+data/splits/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+
+# New experiment outputs are local by default.
+# The authoritative publication summaries already committed under results/
+# are intentionally versioned and should not be overwritten.
+figures/
+build/
+dist/
+*.egg-info/
+.cache/
+tmp/
+temp/

@@ -1,0 +1,36 @@
+{
+  "authoritative_results": {
+    "r8_audit": "results/postrefinement-audit-v1",
+    "step60": "results/step60-aggregation-v1.1",
+    "step61": "results/step61-figures-v1.3"
+  },
+  "change_control_id": "B109",
+  "contract_sha256": "30311496b5a3545b4413ed5a35970fec6a28f995078b33176410dc80bd4ec3c0",
+  "excluded_directory_names": [
+    ".git",
+    ".idea",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "venv"
+  ],
+  "excluded_filenames": [
+    ".DS_Store",
+    ".coverage",
+    "Thumbs.db",
+    "coverage.xml"
+  ],
+  "excluded_prefixes": [
+    "results/publication-results-freeze-v2"
+  ],
+  "excluded_suffixes": [
+    ".pyc",
+    ".pyo"
+  ],
+  "freeze_id": "paper2-publication-results-freeze-v2",
+  "historical_freeze_preserved": "results/publication-results-freeze-v1",
+  "schema_version": "2.0",
+  "scope_mode": "all_clean_project_files"
+}

@@ -1,0 +1,87 @@
+schema_version: '1.0'
+freeze_id: paper2-final-evaluation-v1
+status: frozen
+dataset:
+  id: ml-1m
+  artifact_version: v1
+  processed_dataset_sha256: 97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec
+  canonical_split_sha256: 4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8
+source_freezes:
+  final_hyperparameters_path: config/final_hyperparameters_v1.yaml
+  final_hyperparameters_sha256: 9aae84dd59d7c34c82a67563139bdb27256874ba79c645c749cbcf788d72c981
+  model_spec_path: docs/model_spec.md
+  model_spec_sha256: e8ee6a9e16d57e89823c450e6ea956dcf7d5624577ef7a6f3e5d9ba8ea0e152f
+  publication_config_path: config/publication.yaml
+  publication_config_semantic_sha256: 99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f
+  publication_ground_truth_path: docs/publication_ground_truth_v1.yaml
+  publication_ground_truth_sha256: 283af45e349245948f1a65d3ecff4a1c4c4545958907b2be2af2d34b104e2854
+  tuning_python_source_sha256: 456a1e3fb552d7ef0cbb440d8df68723f51b455cd7193d5fb48840812ef591c9
+training_protocol:
+  policy: refit_from_scratch_on_train_plus_validation
+  train_rows: 805443
+  validation_rows: 97383
+  final_fit_rows: 902826
+  final_fit_partitions:
+  - train
+  - validation
+  parameter_initialization: from_scratch_per_final_seed
+  validation_weights_reused: false
+  test_positive_training_signal: false
+  test_ratings_used_for_training: false
+  test_pair_identity_for_negative_masking_only: true
+  hyperparameter_retuning: false
+evaluation_protocol:
+  target_split: test
+  test_rows: 97383
+  ranking_mode: full_catalog
+  candidate_catalog: canonical_train_item_catalog
+  exclude_from_test_candidates:
+  - final_fit_train_interactions
+  - final_fit_validation_interactions
+  retain_test_positives_in_candidates: true
+  tie_break: ascending_item_id
+  k_values:
+  - 5
+  - 10
+  - 20
+  ranking_metrics:
+  - precision
+  - recall
+  - hit_rate
+  - ndcg
+  - mrr
+  - map
+  common_primary_reporting_metric: ndcg_at_10
+  family_native_metrics_are_supplementary: true
+seed_protocol:
+  final_seeds:
+  - 2026
+  - 2027
+  - 2028
+  n_final_seeds: 3
+  same_frozen_hyperparameters_across_seeds: true
+  no_seed_selected_using_test: true
+model_inventory:
+  total_models: 13
+  tuned_models: 11
+  untuned_baselines: 2
+  models:
+  - Popularity
+  - Random
+  - PCA/SVD
+  - BernoulliMF
+  - PoissonMF
+  - GaussianMF
+  - LogisticPCA
+  - HPF
+  - b-emb
+  - p-emb
+  - ap-emb
+  - g-emb
+  - ng-emb
+test_lock:
+  test_metrics_seen_before_protocol_freeze: false
+  test_metrics_may_not_trigger_retuning: true
+  test_metrics_may_not_trigger_model_redefinition: true
+  test_metrics_may_not_trigger_seed_selection: true
+  single_final_protocol: true

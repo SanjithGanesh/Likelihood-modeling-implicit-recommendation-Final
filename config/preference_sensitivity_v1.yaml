@@ -1,0 +1,95 @@
+﻿schema_version: "1.0"
+freeze_id: paper2-preference-sensitivity-v1
+status: frozen
+
+purpose:
+  type: prespecified_secondary_sensitivity_analysis
+  primary_results_affected: false
+  retuning_allowed: false
+  model_replacement_allowed: false
+
+dataset:
+  id: ml-1m
+  artifact_version: v1
+  canonical_train_rows: 805443
+  canonical_validation_rows: 97383
+  canonical_test_rows: 97383
+  final_fit_rows: 902826
+  canonical_train_catalog_items: 3706
+
+training_protocol:
+  policy: deterministic_refit_from_scratch
+  fit_partitions:
+    - train
+    - validation
+  final_fit_rows: 902826
+  selected_hyperparameters_source: config/final_hyperparameters_v1.yaml
+  hyperparameter_retuning: false
+  seeds:
+    - 2026
+    - 2027
+    - 2028
+
+model_inventory:
+  - Popularity
+  - Random
+  - PCA/SVD
+  - BernoulliMF
+  - PoissonMF
+  - GaussianMF
+  - LogisticPCA
+  - HPF
+  - b-emb
+  - p-emb
+  - ap-emb
+  - g-emb
+  - ng-emb
+
+planned_experiments: 39
+
+evaluation:
+  target_split: test
+  ranking_mode: full_catalog
+  candidate_catalog: canonical_train_item_catalog
+  exclude_from_candidates:
+    - final_fit_train_interactions
+    - final_fit_validation_interactions
+  retain_test_interactions_as_candidates: true
+
+preference_relevance:
+  definition: rating_greater_than_or_equal_to_4
+  threshold: 4.0
+  preferred_test_rows: 55964
+  nonpreferred_test_rows: 41419
+  preferred_fraction: 0.574679358820328
+  eligible_users: 5851
+  users_with_zero_preferred_test_items: 189
+  zero_preferred_user_policy: exclude_from_preference_metric_aggregation
+  lower_rated_test_items:
+    remain_candidates: true
+    relevant: false
+
+catalog_coverage:
+  unique_preferred_test_items: 2887
+  preferred_items_absent_from_train_catalog: 0
+
+metrics:
+  k_values:
+    - 5
+    - 10
+    - 20
+  ranking_metrics:
+    - precision
+    - recall
+    - hit_rate
+    - ndcg
+    - mrr
+    - map
+  primary_reporting_metric: ndcg_at_10
+
+interpretation:
+  secondary_analysis_only: true
+  may_replace_primary_results: false
+  may_trigger_retuning: false
+  may_trigger_model_redefinition: false
+  may_trigger_seed_selection: false

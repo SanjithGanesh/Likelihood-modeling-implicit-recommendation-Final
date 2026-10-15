@@ -1,0 +1,21 @@
+{
+  "change_control_id": "B109",
+  "contract_sha256": "30311496b5a3545b4413ed5a35970fec6a28f995078b33176410dc80bd4ec3c0",
+  "freeze_id": "paper2-publication-results-freeze-v2",
+  "freeze_inventory_sha256": "ed074949b83c8ade0c693ba199215f9fceb6ed6ef0828dd357ad4f7adc773bed",
+  "frozen_file_count": 1445,
+  "frozen_total_bytes": 265958107,
+  "historical_freeze_v1_preserved": true,
+  "model_rescoring_performed": false,
+  "model_result_changes": false,
+  "model_training_performed": false,
+  "model_tuning_performed": false,
+  "package_sha256": "924cae95a533679453601a3bc63fb0205bdd69328b1a0c9304e4de72edca8634",
+  "r8_audit_freeze_id": "paper2-r8-postrefinement-audit-v1",
+  "schema_version": "2.0",
+  "scientific_changes": false,
+  "source_files_modified": false,
+  "status": "frozen",
+  "step60_authority": "paper2-step60-aggregation-v1.1",
+  "step61_authority": "paper2-step61-figures-v1.3"
+}

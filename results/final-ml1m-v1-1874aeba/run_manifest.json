@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "run_id": "final-ml1m-v1-1874aeba",
+  "dataset_id": "ml-1m",
+  "artifact_version": "v1",
+  "config_hash": "99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f",
+  "dataset_hash": "97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec",
+  "split_hash": "4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8",
+  "code_version": "f136446440ded4c815c6e88408a1da35d327c1ce4d197518d01f67d28463b9c1",
+  "created_at_utc": "2026-10-09T23:49:26.191212Z"
+}

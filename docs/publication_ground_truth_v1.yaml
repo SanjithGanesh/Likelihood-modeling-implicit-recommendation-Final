@@ -1,0 +1,65 @@
+ground_truth:
+  name: Paper 2 Publication Ground Truth v1
+  status: frozen
+  benchmark_role: publication_primary
+  freeze_stage: post_gate_b_pre_tuning
+dataset:
+  id: ml-1m
+  artifact_version: v1
+  raw_archive_sha256: a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20
+  dataset_manifest_sha256: bbe16d051bcf3443616988ac3538cafe63e12f96dbba3b9955a6bb2c94d26dac
+  config_sha256: 99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f
+  processed_dataset_sha256: 97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec
+  rows: 1000209
+  users: 6040
+  items: 3706
+  user_mapping_sha256: abd7e7cf83ef23c9d60fdffdc384a74f78cc4bb38ced16c80fd8d5f6462da922
+  item_mapping_sha256: 7b37ed107ec13908bcf780261b0508246afc35c3a405f6b6b7556bd9d81c8f86
+split:
+  strategy: per_user_random
+  train_fraction: 0.8
+  validation_fraction: 0.1
+  test_fraction: 0.1
+  seed: 2026
+  constrained_attempt: 1
+  enforce_train_item_coverage: true
+  train_rows: 805443
+  validation_rows: 97383
+  test_rows: 97383
+  train_items: 3706
+  cold_validation_items: 0
+  cold_test_items: 0
+  train_sha256: e94a88491afee6a466e6ac65bf0854c4517e5714795f4d94b290cf9aa952d536
+  validation_sha256: b54b302b7f82b254580cf4a38b97a7b36bc01940d142e75ab4eeb5b9afbfc58d
+  test_sha256: 80678b623787707fcee9dc9455901a2eecc04a00329cb86ca81d23fec35e1dba
+  split_sha256: 4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8
+evaluation:
+  ranking_protocol: full_catalog
+  exclude_training_items: true
+  exclude_validation_items_from_test_candidates: true
+  k_values:
+  - 5
+  - 10
+  - 20
+  primary_selection_metric: ndcg_at_10
+  test_access_during_tuning: false
+  deterministic_tie_breaking: true
+reproducibility:
+  global_seed: 2026
+  deterministic: true
+  final_seeds:
+  - 2026
+  - 2027
+  - 2028
+model_specification:
+  path: docs/model_spec.md
+  revision: v1.2
+  sha256: e8ee6a9e16d57e89823c450e6ea956dcf7d5624577ef7a6f3e5d9ba8ea0e152f
+publication_rules:
+  validation_only_hyperparameter_selection: true
+  test_locked_during_tuning: true
+  primary_implicit_task: all observed ratings are positive interactions
+  secondary_preference_sensitivity: rating >= 4.0
+  cross_family_primary_evaluation: full-catalog ranking
+  native_metrics_are_supplementary: true
+  final_test_evaluation_requires_frozen_hyperparameters: true

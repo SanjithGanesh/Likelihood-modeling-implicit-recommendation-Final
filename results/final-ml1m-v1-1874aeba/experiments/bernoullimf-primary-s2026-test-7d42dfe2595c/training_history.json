@@ -1,0 +1,457 @@
+{
+  "schema_version": "1.0",
+  "run_id": "final-ml1m-v1-1874aeba",
+  "experiment_id": "bernoullimf-primary-s2026-test-7d42dfe2595c",
+  "records": [
+    {
+      "epoch": 1,
+      "positive_loss": 0.4446605514073735,
+      "negative_loss": 0.4666694038825031,
+      "total_loss": 0.930873164937562,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 2,
+      "positive_loss": 0.3494825039131306,
+      "negative_loss": 0.37679195506958235,
+      "total_loss": 0.7623570961732316,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 3,
+      "positive_loss": 0.3171373033944741,
+      "negative_loss": 0.3461665270238539,
+      "total_loss": 0.7100516237002263,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 4,
+      "positive_loss": 0.2952058500649601,
+      "negative_loss": 0.3270642920435194,
+      "total_loss": 0.6779103912247657,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 5,
+      "positive_loss": 0.2762725041096708,
+      "negative_loss": 0.3111269642898343,
+      "total_loss": 0.6514120786901566,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 6,
+      "positive_loss": 0.26021659903757716,
+      "negative_loss": 0.2981571043352615,
+      "total_loss": 0.6302228152297836,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 7,
+      "positive_loss": 0.24674313741492337,
+      "negative_loss": 0.28778836780198713,
+      "total_loss": 0.6135997570699745,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 8,
+      "positive_loss": 0.23590071891493758,
+      "negative_loss": 0.27998427529379893,
+      "total_loss": 0.6012453645278214,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 9,
+      "positive_loss": 0.2275396760126541,
+      "negative_loss": 0.2739812430140026,
+      "total_loss": 0.5922518008932756,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 10,
+      "positive_loss": 0.22090594698649837,
+      "negative_loss": 0.2693577397380338,
+      "total_loss": 0.5854924295715959,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 11,
+      "positive_loss": 0.21579852899198174,
+      "negative_loss": 0.26624860153680074,
+      "total_loss": 0.5809601341998618,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 12,
+      "positive_loss": 0.211888004291556,
+      "negative_loss": 0.26367685638292754,
+      "total_loss": 0.5774563387707847,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 13,
+      "positive_loss": 0.20869833461065473,
+      "negative_loss": 0.26167334502910283,
+      "total_loss": 0.574648342607559,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 14,
+      "positive_loss": 0.20611494382241638,
+      "negative_loss": 0.25988174132828945,
+      "total_loss": 0.572219052538128,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 15,
+      "positive_loss": 0.20412654049169068,
+      "negative_loss": 0.2590350863829056,
+      "total_loss": 0.5709427458471703,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 16,
+      "positive_loss": 0.20246012370065253,
+      "negative_loss": 0.2578346532114217,
+      "total_loss": 0.5693399810269563,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 17,
+      "positive_loss": 0.20117123750700427,
+      "negative_loss": 0.2573434952578452,
+      "total_loss": 0.5685964666695055,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 18,
+      "positive_loss": 0.1999428347938016,
+      "negative_loss": 0.2564296995934621,
+      "total_loss": 0.5673142524289003,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 19,
+      "positive_loss": 0.19907060238221969,
+      "negative_loss": 0.2557701243102888,
+      "total_loss": 0.5664856959687976,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 20,
+      "positive_loss": 0.19817190062273954,
+      "negative_loss": 0.2555328403934131,
+      "total_loss": 0.5659473267285964,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 21,
+      "positive_loss": 0.1973734903116926,
+      "negative_loss": 0.2548302040155174,
+      "total_loss": 0.5649591794769258,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 22,
+      "positive_loss": 0.19700163701571913,
+      "negative_loss": 0.25460480302300575,
+      "total_loss": 0.5648004009367403,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 23,
+      "positive_loss": 0.19637925003267037,
+      "negative_loss": 0.2542054345650153,
+      "total_loss": 0.5641349129600309,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 24,
+      "positive_loss": 0.19592774915845268,
+      "negative_loss": 0.2539310396297013,
+      "total_loss": 0.5637211240950422,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 25,
+      "positive_loss": 0.19547663513354832,
+      "negative_loss": 0.2535474045057804,
+      "total_loss": 0.5631568943944281,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 26,
+      "positive_loss": 0.19509028044714444,
+      "negative_loss": 0.2533006857923638,
+      "total_loss": 0.5627957841246061,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 27,
+      "positive_loss": 0.19482609865910308,
+      "negative_loss": 0.25347014791210803,
+      "total_loss": 0.5628979162303329,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 28,
+      "positive_loss": 0.19441437028051503,
+      "negative_loss": 0.2529118703873484,
+      "total_loss": 0.5621192579494004,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 29,
+      "positive_loss": 0.19424879267139922,
+      "negative_loss": 0.25285335747662835,
+      "total_loss": 0.5620806780116456,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 30,
+      "positive_loss": 0.19391799537000612,
+      "negative_loss": 0.25251792796307015,
+      "total_loss": 0.5615855474786017,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 31,
+      "positive_loss": 0.1935130483487785,
+      "negative_loss": 0.25223234376382925,
+      "total_loss": 0.5610343489593662,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 32,
+      "positive_loss": 0.19354235761614233,
+      "negative_loss": 0.2521636936278723,
+      "total_loss": 0.5611206466597607,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 33,
+      "positive_loss": 0.19326974142369865,
+      "negative_loss": 0.25209542039144145,
+      "total_loss": 0.5609213550436318,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 34,
+      "positive_loss": 0.19294353133102485,
+      "negative_loss": 0.25204154234636555,
+      "total_loss": 0.560670167155496,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 35,
+      "positive_loss": 0.1928135278427294,
+      "negative_loss": 0.25179769392947476,
+      "total_loss": 0.5603923532856337,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 36,
+      "positive_loss": 0.19284476763669262,
+      "negative_loss": 0.25194265706618596,
+      "total_loss": 0.560653023543984,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 37,
+      "positive_loss": 0.19257008893684152,
+      "negative_loss": 0.25160582426849437,
+      "total_loss": 0.5601204536087556,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 38,
+      "positive_loss": 0.19240658662454302,
+      "negative_loss": 0.25166452660231153,
+      "total_loss": 0.5601207459513476,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 39,
+      "positive_loss": 0.1922854725603173,
+      "negative_loss": 0.2513305143461687,
+      "total_loss": 0.5597253726000645,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 40,
+      "positive_loss": 0.19210237390176962,
+      "negative_loss": 0.251200140507176,
+      "total_loss": 0.559472448492889,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 41,
+      "positive_loss": 0.19196982944854474,
+      "negative_loss": 0.2511273898298498,
+      "total_loss": 0.5593758433339532,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 42,
+      "positive_loss": 0.19175212945218,
+      "negative_loss": 0.2508344126009701,
+      "total_loss": 0.5589474891896812,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 43,
+      "positive_loss": 0.1918182425724627,
+      "negative_loss": 0.25106971731351896,
+      "total_loss": 0.5592977769301227,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 44,
+      "positive_loss": 0.19178061913623526,
+      "negative_loss": 0.25108620127077785,
+      "total_loss": 0.559329988223692,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 45,
+      "positive_loss": 0.19170081017933263,
+      "negative_loss": 0.25103335629761514,
+      "total_loss": 0.5592265883527218,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 46,
+      "positive_loss": 0.19158952821771666,
+      "negative_loss": 0.25096305390061835,
+      "total_loss": 0.5590955008971383,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 47,
+      "positive_loss": 0.1915160871102829,
+      "negative_loss": 0.25086253889832416,
+      "total_loss": 0.5589970309038603,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 48,
+      "positive_loss": 0.19139809469459476,
+      "negative_loss": 0.2508806579663556,
+      "total_loss": 0.5589474373215334,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 49,
+      "positive_loss": 0.19128603929978577,
+      "negative_loss": 0.2504967553565347,
+      "total_loss": 0.5585147233383307,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    },
+    {
+      "epoch": 50,
+      "positive_loss": 0.19124512593676884,
+      "negative_loss": 0.2508538130117364,
+      "total_loss": 0.5588476645052934,
+      "positive_examples": 902826,
+      "negative_examples": 9028260,
+      "batches": 882
+    }
+  ]
+}

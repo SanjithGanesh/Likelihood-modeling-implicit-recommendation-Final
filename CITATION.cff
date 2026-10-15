@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated software release and manuscript."
+title: "Likelihood Modeling for Implicit Recommendation: Reproducibility Code"
+type: software
+authors:
+  - family-names: Ganesh
+    given-names: Sanjith
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+abstract: >-
+  Reproducibility code for a controlled full-catalog evaluation of Bernoulli,
+  Poisson, and Gaussian recommendation objectives on MovieLens 1M.
+keywords:
+  - recommender systems
+  - implicit feedback
+  - matrix factorization
+  - exponential-family embeddings
+  - reproducibility

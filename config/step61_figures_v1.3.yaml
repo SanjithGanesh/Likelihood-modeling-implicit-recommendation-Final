@@ -1,0 +1,49 @@
+schema_version: "1.3"
+freeze_id: paper2-step61-figures-v1.3
+status: frozen
+
+purpose:
+  stage: publication_figure_data_provenance_correction
+  change_control_id: B101
+  model_training_permitted: false
+  model_rescoring_permitted: false
+  statistical_reanalysis_permitted: false
+  image_rerender_permitted: false
+
+parent:
+  figure_library: results/step61-figures-v1.2
+  figure_manifest_sha256: 3a6df857ecb1278324e71fa2b9ab3c983ac0d36df70020dbdca90d1c3a9bd9d3
+  corrected_aggregation: results/step60-aggregation-v1.1
+
+authorized_change:
+  figure_id: F05
+  artifact: figure_data/f05_fig05_primary_vs_preference_ndcg10.csv
+  reason: >
+    Propagate the B94 Step 60 semantic correction into the publication
+    plot-data artifact. Preserve the signed preference-minus-primary quantity
+    explicitly as signed_difference and store the true nonnegative magnitude
+    as absolute_difference.
+  signed_difference:
+    definition: preference_ndcg_at_10_mean_minus_primary_ndcg_at_10_mean
+  absolute_difference:
+    definition: absolute_value_of_signed_difference
+
+required_invariants:
+  all_84_images_byte_identical_to_v1_2: true
+  figure_index_byte_identical_to_v1_2: true
+  figure_captions_byte_identical_to_v1_2: true
+  other_27_plot_data_csvs_byte_identical_to_v1_2: true
+  f08_images_byte_identical_to_v1_2: true
+  primary_values_unchanged: true
+  preference_values_unchanged: true
+  ranks_unchanged: true
+  scientific_result_changes: false
+
+output:
+  directory: results/step61-figures-v1.3
+  overwrite_parent: false
+  total_figures: 28
+  total_image_files: 84
+  total_plot_data_csvs: 28
+  total_nonmanifest_files: 114
+  total_files_including_manifest: 115

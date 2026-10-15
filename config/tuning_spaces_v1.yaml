@@ -1,0 +1,340 @@
+tuning_policy:
+  version: v1
+  dataset_id: ml-1m
+  artifact_version: v1
+  selection_split: validation
+  selection_seed: 2026
+  primary_metric: ndcg_at_10
+  test_access_allowed: false
+  gradient_epoch_budget: 50
+  early_stopping_used: false
+  early_stopping_note: publication.yaml contains an early-stopping flag, but the frozen
+    model APIs do not currently expose or implement validation-driven early stopping;
+    primary tuning therefore uses a fixed 50-epoch budget.
+  primary_context_normalization: mean
+  context_normalization_tuned: false
+  context_normalization_note: Context normalization is held at the frozen primary
+    setting 'mean'. Alternative normalization schemes are reserved for the later controlled
+    stability ablation.
+  selection_rule: Choose the configuration with highest validation NDCG@10. Exact
+    ties prefer lower latent dimension, then the lexicographically smaller deterministic
+    configuration ID.
+  final_seeds:
+  - 2026
+  - 2027
+  - 2028
+  final_test_rule: No test evaluation until one configuration per model has been selected
+    on validation and frozen.
+untuned_models:
+  Popularity:
+    reason: No performance hyperparameters.
+  Random:
+    reason: No performance hyperparameters; seed is a reproducibility control, not
+      a tuning parameter.
+models:
+  PCA/SVD:
+    search_type: explicit_grid
+    stage_1:
+      n_components:
+      - 16
+      - 32
+      - 64
+      - 128
+      n_iter:
+      - 7
+    fixed:
+      seed: 2026
+  BernoulliMF:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.03
+    stage_2_at_best_stage_1:
+    - negative_ratio: 2
+    - negative_ratio: 10
+    - factor_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - factor_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    fixed:
+      epochs: 50
+      batch_size: 1024
+      negative_ratio: 5
+      negative_weight: 1.0
+      factor_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      negative_strategy: uniform
+      negative_replace: true
+      max_grad_norm: 5.0
+  PoissonMF:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.03
+    stage_2_at_best_stage_1:
+    - zero_ratio: 2
+    - zero_ratio: 10
+    - factor_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - factor_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    fixed:
+      epochs: 50
+      batch_size: 1024
+      zero_ratio: 5
+      factor_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      zero_strategy: uniform
+      zero_replace: true
+      log_rate_min: -20.0
+      log_rate_max: 12.0
+      max_grad_norm: 5.0
+  GaussianMF:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.03
+    stage_2_at_best_stage_1:
+    - factor_l2: 0.0
+      bias_l2: 0.0
+    - factor_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - factor_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    - factor_l2: 0.0001
+      bias_l2: 0.0001
+    fixed:
+      epochs: 50
+      batch_size: 1024
+      factor_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      max_grad_norm: 5.0
+  LogisticPCA:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.03
+    stage_2_at_best_stage_1:
+    - n_factors: 16
+    - n_factors: 128
+    - learning_rate: 0.001
+    - learning_rate: 0.05
+    fixed:
+      epochs: 50
+      user_batch_size: 32
+      max_grad_norm: 5.0
+      intercept_epsilon: 1.0e-06
+  HPF:
+    search_type: explicit_grid
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      max_iterations:
+      - 50
+      - 100
+      - 200
+    additional_capacity_checks:
+    - n_factors: 16
+      max_iterations: 100
+    - n_factors: 128
+      max_iterations: 100
+    fixed:
+      tolerance: 0.0001
+      a0: 0.3
+      a: 0.3
+      b0: 1.0
+      c0: 0.3
+      c: 0.3
+      d0: 1.0
+      initialization_scale: 0.1
+    note: Do not claim HPF reached tolerance unless it actually does. max_iterations
+      is treated as a computational budget and selected by validation.
+  b-emb:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.05
+    stage_2_at_best_stage_1:
+    - negative_ratio: 2
+    - negative_ratio: 10
+    - target_l2: 1.0e-07
+      context_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - target_l2: 1.0e-05
+      context_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    fixed:
+      epochs: 50
+      batch_size: 2048
+      negative_ratio: 5
+      negative_weight: 1.0
+      negative_strategy: uniform
+      negative_replace: true
+      context_normalization: mean
+      target_l2: 1.0e-06
+      context_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      max_grad_norm: 5.0
+  p-emb:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.05
+    stage_2_at_best_stage_1:
+    - zero_ratio: 2
+    - zero_ratio: 10
+    - target_l2: 1.0e-07
+      context_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - target_l2: 1.0e-05
+      context_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    fixed:
+      epochs: 50
+      batch_size: 2048
+      zero_ratio: 5
+      zero_sampling_strategy: uniform
+      zero_replace: true
+      context_normalization: mean
+      target_l2: 1.0e-06
+      context_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      log_rate_clip: 20.0
+      max_grad_norm: 5.0
+  ap-emb:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.05
+    stage_2_at_best_stage_1:
+    - target_l2: 0.0
+      context_l2: 0.0
+      bias_l2: 0.0
+    - target_l2: 1.0e-08
+      context_l2: 1.0e-08
+      bias_l2: 1.0e-08
+    - target_l2: 1.0e-07
+      context_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - target_l2: 1.0e-05
+      context_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    fixed:
+      epochs: 50
+      batch_size: 2048
+      zero_ratio: 5
+      zero_sampling_strategy: uniform
+      zero_replace: true
+      context_normalization: mean
+      target_l2: 1.0e-06
+      context_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      initial_interaction_rate: 0.01
+      max_grad_norm: 5.0
+    required_regularization_coverage:
+    - 0.0
+    - 1.0e-08
+    - 1.0e-07
+    - 1.0e-06
+    note: The 1e-6 point is already represented by the stage-1 fixed setting. Stage
+      2 adds 0, 1e-8, 1e-7, and a 1e-5 refinement.
+  g-emb:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.05
+    stage_2_at_best_stage_1:
+    - target_l2: 0.0
+      context_l2: 0.0
+      bias_l2: 0.0
+    - target_l2: 1.0e-07
+      context_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - target_l2: 1.0e-05
+      context_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    - target_l2: 0.0001
+      context_l2: 0.0001
+      bias_l2: 0.0001
+    fixed:
+      epochs: 50
+      batch_size: 2048
+      context_normalization: mean
+      target_l2: 1.0e-06
+      context_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      max_grad_norm: 5.0
+  ng-emb:
+    search_type: two_stage
+    stage_1:
+      n_factors:
+      - 32
+      - 64
+      learning_rate:
+      - 0.003
+      - 0.01
+      - 0.05
+    stage_2_at_best_stage_1:
+    - target_l2: 0.0
+      context_l2: 0.0
+      bias_l2: 0.0
+    - target_l2: 1.0e-07
+      context_l2: 1.0e-07
+      bias_l2: 1.0e-07
+    - target_l2: 1.0e-05
+      context_l2: 1.0e-05
+      bias_l2: 1.0e-05
+    - target_l2: 0.0001
+      context_l2: 0.0001
+      bias_l2: 0.0001
+    fixed:
+      epochs: 50
+      batch_size: 2048
+      context_normalization: mean
+      target_l2: 1.0e-06
+      context_l2: 1.0e-06
+      bias_l2: 1.0e-06
+      max_grad_norm: 5.0
+    note: Softplus transformation remains frozen and identical during training and
+      inference; it is not a tuning parameter.

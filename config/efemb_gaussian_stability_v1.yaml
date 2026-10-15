@@ -1,0 +1,84 @@
+﻿schema_version: "1.0"
+freeze_id: paper2-efemb-gaussian-stability-v1
+status: frozen
+
+purpose:
+  type: prespecified_diagnostic_ablation
+  primary_results_affected: false
+  retuning_allowed: false
+  model_replacement_allowed: false
+
+dataset:
+  id: ml-1m
+  artifact_version: v1
+  train_rows: 805443
+  validation_rows: 97383
+
+information_boundary:
+  fit_partition:
+    - train
+  evaluation_partition: validation
+  test_access_allowed: false
+  allow_test: false
+
+models:
+  - g-emb
+  - ng-emb
+
+normalizations:
+  - raw
+  - sqrt
+  - mean
+
+seeds:
+  - 2026
+  - 2027
+  - 2028
+
+planned_experiments: 18
+
+hyperparameter_policy:
+  source: config/final_hyperparameters_v1.yaml
+  rule: selected_step55_hyperparameters_with_only_context_normalization_replaced
+
+diagnostics:
+  ranking:
+    - ndcg_at_10
+  native:
+    - rmse
+    - mae
+  training_history:
+    - mse
+    - rmse
+    - mae
+    - total_loss
+    - max_abs_prediction
+    - max_context_norm
+    - max_gradient_norm_before_clipping
+    - nonfinite_events
+  distribution_summary:
+    statistics:
+      - count
+      - min
+      - mean
+      - std
+      - p50
+      - p75
+      - p90
+      - p95
+      - p99
+      - max
+    quantities:
+      - positive_training_context_length
+      - positive_training_context_norm
+
+failure_policy:
+  numerical_failure_is_scientific_outcome: true
+  modify_hyperparameters_after_failure: false
+  retry_with_changed_configuration: false
+  continue_remaining_frozen_runs: true
+
+interpretation:
+  primary_model_selection_use: false
+  test_result_replacement_allowed: false
+  post_test_retuning_allowed: false

@@ -1,0 +1,12 @@
+{
+  "primary_metric": "ndcg_at_10",
+  "publication_ground_truth_path": "docs/publication_ground_truth_v1.yaml",
+  "publication_ground_truth_sha256": "283af45e349245948f1a65d3ecff4a1c4c4545958907b2be2af2d34b104e2854",
+  "purpose": "Paper 2 validation-only publication tuning",
+  "schema_version": "1.0",
+  "selection_seed": 2026,
+  "selection_split": "validation",
+  "test_access_allowed": false,
+  "tuning_space_path": "config/tuning_spaces_v1.yaml",
+  "tuning_space_sha256": "91a6c1f077e6986ea5e46e6860d8e2fbaa08d6238cbe29e30711022180afbfa5"
+}

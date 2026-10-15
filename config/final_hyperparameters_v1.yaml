@@ -1,0 +1,260 @@
+schema_version: '1.0'
+freeze_id: paper2-final-hyperparameters-v1
+status: frozen
+dataset:
+  id: ml-1m
+  artifact_version: v1
+  processed_dataset_sha256: 97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec
+  split_sha256: 4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8
+scientific_provenance:
+  model_spec_path: docs/model_spec.md
+  model_spec_sha256: e8ee6a9e16d57e89823c450e6ea956dcf7d5624577ef7a6f3e5d9ba8ea0e152f
+  publication_config_path: config/publication.yaml
+  publication_config_semantic_sha256: 99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f
+  tuning_space_path: config/tuning_spaces_v1.yaml
+  tuning_space_sha256: 91a6c1f077e6986ea5e46e6860d8e2fbaa08d6238cbe29e30711022180afbfa5
+  publication_ground_truth_path: docs/publication_ground_truth_v1.yaml
+  publication_ground_truth_sha256: 283af45e349245948f1a65d3ecff4a1c4c4545958907b2be2af2d34b104e2854
+  tuning_run_id: tuning-ml1m-v1-91a6c1f0
+  tuning_summary_path: results/tuning-ml1m-v1-91a6c1f0/tuning_summary_all.json
+  tuning_summary_sha256: f48b5a7d9cec00e3c61bb21f643532cbcf69b1f01b234560d5300ffec5ed28ff
+  python_source_sha256: 456a1e3fb552d7ef0cbb440d8df68723f51b455cd7193d5fb48840812ef591c9
+selection_policy:
+  selection_split: validation
+  selection_seed: 2026
+  primary_metric: ndcg_at_10
+  stage_1_trials: 64
+  stage_2_trials: 38
+  total_validation_trials: 102
+  test_access_during_selection: false
+  hyperparameter_retuning_after_freeze: false
+final_evaluation:
+  target_split: test
+  final_seeds:
+  - 2026
+  - 2027
+  - 2028
+  n_final_seeds: 3
+  hyperparameters_fixed_across_seeds: true
+  seed_replaces_selection_seed: true
+tuned_models:
+  PCA/SVD:
+    selected_experiment_id: pca-svd-primary-s2026-validation-cb92a1e3820b
+    selected_stage: stage_1
+    validation_ndcg_at_10: 0.1359084417450085
+    stage_1_trials: 4
+    stage_2_trials: 0
+    total_trials_considered: 4
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      n_components: 16
+      n_iter: 7
+  BernoulliMF:
+    selected_experiment_id: bernoullimf-primary-s2026-validation-fdce2b515885
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.23064821413752218
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 1024
+      bias_l2: 1.0e-06
+      device: cpu
+      epochs: 50
+      factor_l2: 1.0e-06
+      learning_rate: 0.003
+      max_grad_norm: 5.0
+      n_factors: 64
+      negative_ratio: 10
+      negative_replace: true
+      negative_strategy: uniform
+      negative_weight: 1.0
+  PoissonMF:
+    selected_experiment_id: poissonmf-primary-s2026-validation-e1c382949550
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.22797537064775114
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 1024
+      bias_l2: 1.0e-07
+      device: cpu
+      epochs: 50
+      factor_l2: 1.0e-07
+      learning_rate: 0.003
+      log_rate_max: 12.0
+      log_rate_min: -20.0
+      max_grad_norm: 5.0
+      n_factors: 32
+      zero_ratio: 5
+      zero_replace: true
+      zero_strategy: uniform
+  GaussianMF:
+    selected_experiment_id: gaussianmf-primary-s2026-validation-22ef83e3e460
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.06725626537056077
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 1024
+      bias_l2: 1.0e-05
+      device: cpu
+      epochs: 50
+      factor_l2: 1.0e-05
+      learning_rate: 0.003
+      max_grad_norm: 5.0
+      n_factors: 64
+  LogisticPCA:
+    selected_experiment_id: logisticpca-primary-s2026-validation-61f4b29de357
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.4127152124197593
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      device: cpu
+      epochs: 50
+      intercept_epsilon: 1.0e-06
+      learning_rate: 0.003
+      max_grad_norm: 5.0
+      n_factors: 128
+      user_batch_size: 32
+  HPF:
+    selected_experiment_id: hpf-primary-s2026-validation-22f191da0fdc
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.21493165051908095
+    stage_1_trials: 6
+    stage_2_trials: 2
+    total_trials_considered: 8
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      a: 0.3
+      a0: 0.3
+      b0: 1.0
+      c: 0.3
+      c0: 0.3
+      d0: 1.0
+      initialization_scale: 0.1
+      max_iterations: 100
+      n_factors: 128
+      tolerance: 0.0001
+  b-emb:
+    selected_experiment_id: b-emb-primary-s2026-validation-1ece806d846f
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.22345855981462714
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 2048
+      bias_l2: 1.0e-07
+      context_l2: 1.0e-07
+      context_normalization: mean
+      device: cpu
+      epochs: 50
+      learning_rate: 0.05
+      max_grad_norm: 5.0
+      n_factors: 64
+      negative_ratio: 5
+      negative_replace: true
+      negative_strategy: uniform
+      negative_weight: 1.0
+      target_l2: 1.0e-07
+  p-emb:
+    selected_experiment_id: p-emb-primary-s2026-validation-76b788cd35fd
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.23020799791835428
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 2048
+      bias_l2: 1.0e-07
+      context_l2: 1.0e-07
+      context_normalization: mean
+      device: cpu
+      epochs: 50
+      learning_rate: 0.05
+      log_rate_clip: 20.0
+      max_grad_norm: 5.0
+      n_factors: 64
+      target_l2: 1.0e-07
+      zero_ratio: 5
+      zero_replace: true
+      zero_sampling_strategy: uniform
+  ap-emb:
+    selected_experiment_id: ap-emb-primary-s2026-validation-1185a9cc333e
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.11073248842698352
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 2048
+      bias_l2: 0.0
+      context_l2: 0.0
+      context_normalization: mean
+      device: cpu
+      epochs: 50
+      initial_interaction_rate: 0.01
+      learning_rate: 0.01
+      max_grad_norm: 5.0
+      n_factors: 64
+      target_l2: 0.0
+      zero_ratio: 5
+      zero_replace: true
+      zero_sampling_strategy: uniform
+  g-emb:
+    selected_experiment_id: g-emb-primary-s2026-validation-91492cb58e5c
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.060156730441275987
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 2048
+      bias_l2: 1.0e-05
+      context_l2: 1.0e-05
+      context_normalization: mean
+      device: cpu
+      epochs: 50
+      learning_rate: 0.05
+      max_grad_norm: 5.0
+      n_factors: 64
+      target_l2: 1.0e-05
+  ng-emb:
+    selected_experiment_id: ng-emb-primary-s2026-validation-16259584085f
+    selected_stage: stage_2
+    validation_ndcg_at_10: 0.07152909704468058
+    stage_1_trials: 6
+    stage_2_trials: 4
+    total_trials_considered: 10
+    seed_policy: replace_with_final_seed
+    hyperparameters:
+      batch_size: 2048
+      bias_l2: 0.0
+      context_l2: 0.0
+      context_normalization: mean
+      device: cpu
+      epochs: 50
+      learning_rate: 0.003
+      max_grad_norm: 5.0
+      n_factors: 32
+      target_l2: 0.0
+untuned_baselines:
+  Popularity:
+    selection_method: untuned_baseline
+    seed_policy: deterministic_no_tuning
+  Random:
+    selection_method: untuned_baseline
+    seed_policy: use_each_final_seed

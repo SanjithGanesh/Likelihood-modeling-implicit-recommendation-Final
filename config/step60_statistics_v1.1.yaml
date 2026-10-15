@@ -1,0 +1,64 @@
+schema_version: "1.1"
+freeze_id: paper2-step60-statistics-v1.1
+status: frozen
+
+purpose:
+  stage: derived_aggregation_semantic_correction
+  change_control_id: B94
+  training_permitted: false
+  model_refit_permitted: false
+  hyperparameter_selection_permitted: false
+  rescoring_permitted: false
+  primary_results_mutable: false
+  secondary_results_mutable: false
+
+parent:
+  statistics_contract: config/step60_statistics_v1.yaml
+  statistics_contract_sha256: 651ac8f6b78073796858cb369cb99b9b16f7f20ef53125374e3405d39316e1a7
+  aggregation_directory: results/step60-aggregation-v1
+  aggregation_manifest_sha256: d7e074d534b99e6deb511b851cbc02b911711cd5f5677c0ad4f5dac671c42c1c
+
+correction:
+  issue: >
+    The v1 primary_vs_preference_ndcg10.csv column named
+    absolute_difference stored the signed quantity
+    preference_ndcg_at_10_mean - primary_ndcg_at_10_mean.
+  authorized_scope:
+    - derived_primary_vs_preference_comparison_semantics
+    - aggregation_manifest_provenance
+  signed_difference:
+    definition: preference_ndcg_at_10_mean_minus_primary_ndcg_at_10_mean
+  absolute_difference:
+    definition: absolute_value_of_signed_difference
+    nonnegative_required: true
+  rank_shift:
+    definition: preference_rank_minus_primary_rank
+    unchanged: true
+
+invariants:
+  primary_experiment_results_unchanged: true
+  preference_experiment_results_unchanged: true
+  stability_experiment_results_unchanged: true
+  primary_summary_unchanged: true
+  preference_summary_unchanged: true
+  stability_summary_unchanged: true
+  primary_ranks_unchanged: true
+  preference_ranks_unchanged: true
+  model_rank_summary_unchanged: true
+  inferential_statistics_added: false
+  confidence_intervals_added: false
+  p_values_added: false
+
+output:
+  directory: results/step60-aggregation-v1.1
+  corrected_file: primary_vs_preference_ndcg10.csv
+  manifest: aggregation_manifest.json
+  copy_other_parent_csvs_byte_identical: true
+
+immutability:
+  parent_aggregation_read_only: true
+  overwrite_parent_results: false
+  overwrite_parent_aggregation: false
+  recompute_model_scores: false
+  regenerate_model_rankings: false
+  refit_models: false

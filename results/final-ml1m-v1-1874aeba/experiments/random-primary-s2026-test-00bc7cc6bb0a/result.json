@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "run_id": "final-ml1m-v1-1874aeba",
+  "experiment_id": "random-primary-s2026-test-00bc7cc6bb0a",
+  "config_hash": "99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f",
+  "dataset_hash": "97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec",
+  "split_hash": "4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8",
+  "code_version": "f136446440ded4c815c6e88408a1da35d327c1ce4d197518d01f67d28463b9c1",
+  "result": {
+    "model_name": "Random",
+    "family": "baseline",
+    "variant": "primary",
+    "seed": 2026,
+    "target_split": "test",
+    "ranking_metrics": {
+      "precision_at_5": 0.004834437086092716,
+      "recall_at_5": 0.0013108201658220357,
+      "hit_rate_at_5": 0.02384105960264901,
+      "ndcg_at_5": 0.004955090729876524,
+      "mrr_at_5": 0.011197571743929359,
+      "map_at_5": 0.0023235835172921264,
+      "precision_at_10": 0.005099337748344371,
+      "recall_at_10": 0.0028611112424142063,
+      "hit_rate_at_10": 0.04850993377483444,
+      "ndcg_at_10": 0.005406920074627346,
+      "mrr_at_10": 0.014415996531062755,
+      "map_at_10": 0.0017027869340034273,
+      "precision_at_20": 0.005,
+      "recall_at_20": 0.005945004645726742,
+      "hit_rate_at_20": 0.09039735099337748,
+      "ndcg_at_20": 0.006207311739676882,
+      "mrr_at_20": 0.017216545060575055,
+      "map_at_20": 0.001387420783183739
+    },
+    "native_metrics": {},
+    "training_history": [],
+    "runtime_seconds": 43.19367940002121,
+    "status": "completed",
+    "error_message": null,
+    "metadata": {
+      "model_class": "src.models.baselines.RandomBaseline",
+      "hyperparameters": {
+        "seed": 2026,
+        "namespace": "random_baseline"
+      },
+      "catalog_size": 3706,
+      "users_evaluated": 6040,
+      "per_user_metric_rows": 6040,
+      "split_seed": 2026,
+      "split_attempt": 1,
+      "enforce_train_item_coverage": true,
+      "train_rows": 902826,
+      "validation_rows": 0,
+      "test_rows": 97383,
+      "canonical_train_rows": 805443,
+      "canonical_validation_rows": 97383,
+      "canonical_test_rows": 97383,
+      "final_fit_rows": 902826,
+      "final_fit_partitions": [
+        "train",
+        "validation"
+      ],
+      "model_construction_heldout_partitions": [
+        "test"
+      ],
+      "evaluation_split_representation": "original_canonical_train_validation_test",
+      "candidate_catalog": "canonical_train_item_catalog",
+      "test_candidate_exclusions": [
+        "canonical_train_interactions",
+        "canonical_validation_interactions"
+      ],
+      "final_hyperparameters_freeze_id": "paper2-final-hyperparameters-v1",
+      "final_hyperparameters_sha256": "9aae84dd59d7c34c82a67563139bdb27256874ba79c645c749cbcf788d72c981",
+      "final_evaluation_freeze_id": "paper2-final-evaluation-v1",
+      "final_evaluation_sha256": "1874aeba214b3a049b439fa4d6b8aabbb8c20e6aa98fdfbeb94c0bb6348002f8",
+      "source_selected_experiment_id": null,
+      "source_selected_stage": null,
+      "post_test_retuning_allowed": false
+    }
+  }
+}

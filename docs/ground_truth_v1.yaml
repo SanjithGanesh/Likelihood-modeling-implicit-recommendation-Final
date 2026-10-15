@@ -1,0 +1,91 @@
+freeze:
+  name: ground_truth_v1
+  status: frozen
+  purpose: development_ground_truth
+  dataset_id: ml-latest-small
+  artifact_version: v1
+
+dataset:
+  role: development_and_smoke_testing
+  publication_primary: false
+
+processed_data:
+  path: data/processed/ml-latest-small/v1/ratings.csv
+  rows: 100836
+  users: 610
+  items: 9724
+  sha256: ff038e58d3e15a85e532cc87f15321edef7c4f8b8d7888ecf91bf980d6a4c612
+
+canonical_split:
+  root: data/splits/ml-latest-small/v1
+
+  train:
+    path: data/splits/ml-latest-small/v1/train.csv
+    rows: 81200
+
+  validation:
+    path: data/splits/ml-latest-small/v1/validation.csv
+    rows: 9818
+
+  test:
+    path: data/splits/ml-latest-small/v1/test.csv
+    rows: 9818
+
+  users: 610
+  items: 9724
+
+  cold_validation_items: 0
+  cold_test_items: 0
+
+  sha256: cb9f49a2342f6d4567c885bcdf495fab31116a7779961061622526d81d131cc9
+
+protocol:
+  split_strategy: per_user_random
+  train_fraction: 0.80
+  validation_fraction: 0.10
+  test_fraction: 0.10
+  seed: 2026
+  enforce_train_item_coverage: true
+
+evaluation:
+  primary_protocol: full_catalog
+  validation_excludes_training_items: true
+  test_excludes_training_items: true
+  test_excludes_validation_items: true
+  deterministic_tie_breaking: true
+  test_locked_during_tuning: true
+
+negative_sampling:
+  observed_definition: all_observed_interactions
+  training_negatives_must_exclude_validation_positives: true
+  training_negatives_must_exclude_test_positives: true
+  popularity_statistics_source: train_only
+
+gate_a:
+  raw_dataset_integrity_verified: true
+  canonical_preprocessing_verified: true
+  canonical_split_verified: true
+  exact_split_reconstruction_verified: true
+  train_item_coverage_verified: true
+  leakage_checks_verified: true
+  negative_sampling_verified: true
+  ranking_metrics_verified: true
+  continuous_metrics_verified: true
+  full_catalog_evaluation_verified: true
+  deterministic_tie_breaking_verified: true
+  test_lock_verified: true
+  overwrite_protection_verified: true
+
+tests:
+  total_passing: 53
+  status: passed
+
+rules:
+  - Do not modify Ground Truth v1 artifacts in place.
+  - Do not regenerate v1 using --force.
+  - If preprocessing or split logic changes, create a new artifact version.
+  - Models must load the canonical split rather than create their own split.
+  - Validation is used for model selection and tuning.
+  - Test results remain inaccessible during tuning.
+  - ml-latest-small is for development and smoke testing only.
+  - ML-1M will be prepared separately for publication experiments after Gate B.

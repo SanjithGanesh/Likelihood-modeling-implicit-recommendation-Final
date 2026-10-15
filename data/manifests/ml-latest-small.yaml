@@ -1,0 +1,69 @@
+dataset:
+  id: ml-latest-small
+  name: MovieLens Latest Small
+  provider: GroupLens Research
+  role: development
+  publication_primary: false
+
+source:
+  archive_url: https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+  checksum_url: https://files.grouplens.org/datasets/movielens/ml-latest-small.zip.md5
+  archive_filename: ml-latest-small.zip
+  extracted_directory: ml-latest-small
+
+integrity:
+  archive_size_bytes: 978202
+  official_md5: 31a303aabbc519bd33d025e44d6c2570
+  sha256: 696d65a3dfceac7c45750ad32df2c259311949efec81f0f144fdfb91ebc9e436
+  checksum_verified: true
+
+format:
+  ratings_file: ratings.csv
+  movies_file: movies.csv
+  tags_file: tags.csv
+  links_file: links.csv
+  readme_file: README.txt
+  delimiter: ","
+  encoding: utf-8
+
+ratings_schema:
+  columns:
+    - userId
+    - movieId
+    - rating
+    - timestamp
+
+raw_statistics:
+  ratings: 100836
+  users: 610
+  movies_metadata: 9742
+  rated_movies: 9724
+  tags: 3683
+  links: 9742
+  rating_min: 0.5
+  rating_max: 5.0
+  missing_values_in_ratings: 0
+
+usage:
+  intended_use:
+    - development
+    - debugging
+    - smoke_testing
+    - pipeline_validation
+  use_for_primary_publication_results: false
+
+preprocessing:
+  status: not_started
+  processed_dataset_hash: null
+  filtering_rules: null
+  indexing_rules: null
+
+split:
+  status: not_created
+  split_manifest: null
+  split_hash: null
+
+notes:
+  - Raw files must remain unchanged.
+  - This dataset is used to validate the corrected publication pipeline before running MovieLens 1M.
+  - Final publication claims must not use this dataset as the primary benchmark.

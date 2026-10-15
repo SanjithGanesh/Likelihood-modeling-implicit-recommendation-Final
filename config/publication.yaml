@@ -1,0 +1,84 @@
+project:
+  name: paper2
+  mode: publication
+
+dataset:
+  id: ml-1m
+  manifest: data/manifests/ml-1m.yaml
+  raw_root: data/raw
+  processed_root: data/processed
+  split_root: data/splits
+
+task:
+  primary_task: implicit_ranking
+  interaction_definition: all_observed_ratings
+  positive_rating_threshold: null
+  preference_sensitivity_threshold: 4.0
+
+preprocessing:
+  min_user_interactions: 20
+  min_item_interactions: 1
+  reindex_users: true
+  reindex_items: true
+  enforce_train_item_coverage: true
+
+split:
+  strategy: per_user_random
+  train_fraction: 0.80
+  validation_fraction: 0.10
+  test_fraction: 0.10
+  seed: 2026
+  save_manifest: true
+
+evaluation:
+  ranking_protocol: full_catalog
+  exclude_training_items: true
+  exclude_validation_items_from_test_candidates: true
+  k_values:
+    - 5
+    - 10
+    - 20
+  primary_selection_metric: ndcg_at_10
+  test_access_during_tuning: false
+  deterministic_tie_breaking: true
+
+reproducibility:
+  global_seed: 2026
+  deterministic: true
+  final_seeds:
+    - 2026
+    - 2027
+    - 2028
+
+runtime:
+  device: cpu
+  num_workers: 0
+  pin_memory: false
+
+training:
+  batch_size: 1024
+  default_epochs: 50
+  default_learning_rate: 0.01
+  early_stopping: true
+  early_stopping_patience: 5
+  checkpointing: true
+
+publication:
+  smoke_test: false
+  publication_results_allowed: true
+  require_validation_selection: true
+  require_frozen_hyperparameters_before_test: true
+  report_multiple_seed_results: true
+
+paths:
+  results_root: results
+  figures_root: figures
+  checkpoint_root: checkpoints
+
+artifacts:
+  require_run_id: true
+  require_config_hash: true
+  require_dataset_hash: true
+  require_seed: true
+  require_runtime_metadata: true
+  reject_incomplete_runs: true

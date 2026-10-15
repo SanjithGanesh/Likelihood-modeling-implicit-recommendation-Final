@@ -1,0 +1,39 @@
+{
+  "artifact_version": "v1",
+  "canonical_split_sha256": "4387af2c66afbc14bb94526260a8f6cde9cf4601f70d47c4f6301022b01709b8",
+  "dataset_id": "ml-1m",
+  "dataset_sha256": "97747ad05c8843a565a9a08d095f5283093471f01c41bddd5be16d49c6c2e3ec",
+  "final_evaluation_freeze_id": "paper2-final-evaluation-v1",
+  "final_evaluation_sha256": "1874aeba214b3a049b439fa4d6b8aabbb8c20e6aa98fdfbeb94c0bb6348002f8",
+  "final_fit_policy": "refit_from_scratch_on_train_plus_validation",
+  "final_fit_rows": 902826,
+  "final_hyperparameters_sha256": "9aae84dd59d7c34c82a67563139bdb27256874ba79c645c749cbcf788d72c981",
+  "final_runner_code_version": "f136446440ded4c815c6e88408a1da35d327c1ce4d197518d01f67d28463b9c1",
+  "models": [
+    "Popularity",
+    "Random",
+    "PCA/SVD",
+    "BernoulliMF",
+    "PoissonMF",
+    "GaussianMF",
+    "LogisticPCA",
+    "HPF",
+    "b-emb",
+    "p-emb",
+    "ap-emb",
+    "g-emb",
+    "ng-emb"
+  ],
+  "planned_experiments": 39,
+  "post_test_retuning_allowed": false,
+  "publication_config_semantic_sha256": "99419bc4f3fab109c7857e9bbf7e7a3f54202dd7cfb802aa024563cbdcc4152f",
+  "purpose": "Paper 2 final publication evaluation",
+  "schema_version": "1.0",
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "target_split": "test",
+  "test_rows": 97383
+}
